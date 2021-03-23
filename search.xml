@@ -4,11 +4,30 @@
   
     
     <entry>
-      <title>java 8 stream</title>
-      <link href="2021/03/12/java-8-stream/"/>
-      <url>2021/03/12/java-8-stream/</url>
+      <title>hexo 本地搜索路径不正确问题</title>
+      <link href="/2021/03/23/hexo-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/"/>
+      <url>/2021/03/23/hexo-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<p><img src="/2021/03/12/java-8-stream/java-8-stream%5CStream.png"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>看最下面的跳转链接多了一个 search 导致无法找到匹配的文章</p><p><img src="/2021/03/23/hexo-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/Snipaste_2021-03-23_11-17-12.png" alt="Snipaste_2021-03-23_11-17-12"></p><p>通过查看源码，确实多了一个 search</p><p><img src="/2021/03/23/hexo-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/Snipaste_2021-03-23_11-18-19.png" alt="Snipaste_2021-03-23_11-18-19"></p><p>解决方法，我查看其他目录的跳转发现它们都是以 <code>/</code> 开头的，只有我的搜索不是，于是我修改直接修改线上 html 文件</p><p><img src="/2021/03/23/hexo-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/Snipaste_2021-03-23_11-18-40.png" alt="Snipaste_2021-03-23_11-18-40"></p><p>这回跳转正常了</p><h2 id="修改-search-xml-模板最终解决问题"><a href="#修改-search-xml-模板最终解决问题" class="headerlink" title="修改 search.xml 模板最终解决问题"></a>修改 search.xml 模板最终解决问题</h2><p>搜索是由 hexo-generator-search 提供的，所以我去看看这里能不能把 <code>/</code> 给加上</p><p><img src="/2021/03/23/hexo-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/Snipaste_2021-03-23_11-19-32.png" alt="Snipaste_2021-03-23_11-19-32"></p><p>最后发现 templates 里的是模板，通过修改它就可以修改生成的 search.xml</p><blockquote><p>search.xml 相当于一个数据库了，这里的内容提供搜索服务</p></blockquote><p><img src="/2021/03/23/hexo-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%B7%AF%E5%BE%84%E4%B8%8D%E6%AD%A3%E7%A1%AE%E9%97%AE%E9%A2%98/Snipaste_2021-03-23_11-20-27.png" alt="Snipaste_2021-03-23_11-20-27"></p><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>重新在自己本地验证下吧。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java 8 stream</title>
+      <link href="/2021/03/12/java-8-stream/"/>
+      <url>/2021/03/12/java-8-stream/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2021/03/12/java-8-stream/Stream.png"></p>]]></content>
       
       
       
@@ -26,8 +45,8 @@
     
     <entry>
       <title>修改 docker 容器内文件无法启动容器解决</title>
-      <link href="2021/03/12/%E4%BF%AE%E6%94%B9-docker-%E5%AE%B9%E5%99%A8%E5%86%85%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E8%A7%A3%E5%86%B3/"/>
-      <url>2021/03/12/%E4%BF%AE%E6%94%B9-docker-%E5%AE%B9%E5%99%A8%E5%86%85%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E8%A7%A3%E5%86%B3/</url>
+      <link href="/2021/03/12/%E4%BF%AE%E6%94%B9-docker-%E5%AE%B9%E5%99%A8%E5%86%85%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E8%A7%A3%E5%86%B3/"/>
+      <url>/2021/03/12/%E4%BF%AE%E6%94%B9-docker-%E5%AE%B9%E5%99%A8%E5%86%85%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%E8%A7%A3%E5%86%B3/</url>
       
         <content type="html"><![CDATA[<p>把 docker 容器中的配置文件复制到主机中，然后在主机中修改，修改完成后再复制到 docker 容器中</p><p>1.复制docker容器的文件到主机中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 容器id：docker容器中配置文件路径 主机路径</span><br></pre></td></tr></table></figure><p>2.修改配置文件中出错的地方<br>3.将配置文件cp到docker容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 主机文件路径 容器id：docker容器中配置文件路径</span><br></pre></td></tr></table></figure><p>4.启动容器</p>]]></content>
       
@@ -45,8 +64,8 @@
     
     <entry>
       <title>sql_mode=only_full_group_by 问题解决</title>
-      <link href="2021/03/12/sql-mode-only-full-group-by-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-      <url>2021/03/12/sql-mode-only-full-group-by-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+      <link href="/2021/03/12/sql-mode-only-full-group-by-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+      <url>/2021/03/12/sql-mode-only-full-group-by-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
       
         <content type="html"><![CDATA[<ol><li>修改mysql配置文件 ：/etc/my.cnf</li><li>添加</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql_mode &#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure><ol start="3"><li>重启 mysql</li></ol>]]></content>
       
@@ -64,8 +83,8 @@
     
     <entry>
       <title>Spring AntMatcher 使用</title>
-      <link href="2021/03/12/Spring-AntMatcher-%E4%BD%BF%E7%94%A8/"/>
-      <url>2021/03/12/Spring-AntMatcher-%E4%BD%BF%E7%94%A8/</url>
+      <link href="/2021/03/12/Spring-AntMatcher-%E4%BD%BF%E7%94%A8/"/>
+      <url>/2021/03/12/Spring-AntMatcher-%E4%BD%BF%E7%94%A8/</url>
       
         <content type="html"><![CDATA[<p><code>?</code>  ：匹配一个字符</p><p><code>*</code>  ：匹配0-n个字符</p><p><code>**</code> ：匹配0-n个目录</p>]]></content>
       
@@ -83,8 +102,8 @@
     
     <entry>
       <title>git remote 相关操作</title>
-      <link href="2021/03/12/git-remote-%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
-      <url>2021/03/12/git-remote-%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
+      <link href="/2021/03/12/git-remote-%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
+      <url>/2021/03/12/git-remote-%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
       
         <content type="html"><![CDATA[<p>获取远端仓库</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure><p>获取远端仓库地址</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote get-url origin</span><br></pre></td></tr></table></figure><p>远端仓库重命名</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rename origin old-origin</span><br></pre></td></tr></table></figure><p>删除远端仓库</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote remove old-origin</span><br></pre></td></tr></table></figure><p>添加远端仓库</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin http://git.dev.idaqi.com/gita</span><br></pre></td></tr></table></figure>]]></content>
       
@@ -102,8 +121,8 @@
     
     <entry>
       <title>Mysql查询当天、当周、本月....</title>
-      <link href="2021/03/12/Mysql%E6%9F%A5%E8%AF%A2%E5%BD%93%E5%A4%A9%E3%80%81%E5%BD%93%E5%91%A8%E3%80%81%E6%9C%AC%E6%9C%88/"/>
-      <url>2021/03/12/Mysql%E6%9F%A5%E8%AF%A2%E5%BD%93%E5%A4%A9%E3%80%81%E5%BD%93%E5%91%A8%E3%80%81%E6%9C%AC%E6%9C%88/</url>
+      <link href="/2021/03/12/Mysql%E6%9F%A5%E8%AF%A2%E5%BD%93%E5%A4%A9%E3%80%81%E5%BD%93%E5%91%A8%E3%80%81%E6%9C%AC%E6%9C%88/"/>
+      <url>/2021/03/12/Mysql%E6%9F%A5%E8%AF%A2%E5%BD%93%E5%A4%A9%E3%80%81%E5%BD%93%E5%91%A8%E3%80%81%E6%9C%AC%E6%9C%88/</url>
       
         <content type="html"><![CDATA[<p><strong>今天</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表名 where to_days(时间字段名) &#x3D; to_days(now());</span><br></pre></td></tr></table></figure><p><strong>昨天</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE TO_DAYS( NOW( ) ) - TO_DAYS( 时间字段名) &lt;&#x3D; 1</span><br></pre></td></tr></table></figure><p><strong>近7天</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 where DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;&#x3D; date(时间字段名)</span><br></pre></td></tr></table></figure><p><strong>近30天</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 where DATE_SUB(CURDATE(), INTERVAL 30 DAY) &lt;&#x3D; date(时间字段名)</span><br></pre></td></tr></table></figure><p><strong>本月</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE DATE_FORMAT( 时间字段名, &#39;%Y%m&#39; ) &#x3D; DATE_FORMAT( CURDATE( ) , &#39;%Y%m&#39; )</span><br></pre></td></tr></table></figure><p><strong>上一月</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE PERIOD_DIFF( date_format( now( ) , &#39;%Y%m&#39; ) , date_format( 时间字段名, &#39;%Y%m&#39; ) ) &#x3D;1</span><br></pre></td></tr></table></figure><p><strong>查询本季度数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;ht_invoice_information&#96; where QUARTER(create_date)&#x3D;QUARTER(now());</span><br></pre></td></tr></table></figure><p><strong>查询上季度数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;ht_invoice_information&#96; where QUARTER(create_date)&#x3D;QUARTER(DATE_SUB(now(),interval 1 QUARTER));</span><br></pre></td></tr></table></figure><p><strong>查询本年数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;ht_invoice_information&#96; where YEAR(create_date)&#x3D;YEAR(NOW());</span><br></pre></td></tr></table></figure><p><strong>查询上年数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from &#96;ht_invoice_information&#96; where year(create_date)&#x3D;year(date_sub(now(),interval 1 year));</span><br></pre></td></tr></table></figure><p><strong>查询当前这周的数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT name,submittime FROM enterprise WHERE YEARWEEK(date_format(submittime,&#39;%Y-%m-%d&#39;)) &#x3D; YEARWEEK(now());</span><br></pre></td></tr></table></figure><p><strong>查询上周的数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT name,submittime FROM enterprise WHERE YEARWEEK(date_format(submittime,&#39;%Y-%m-%d&#39;)) &#x3D; YEARWEEK(now())-1;</span><br></pre></td></tr></table></figure><p><strong>查询上个月的数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">select name,submittime from enterprise where date_format(submittime,&#39;%Y-%m&#39;)&#x3D;date_format(DATE_SUB(curdate(), INTERVAL 1 MONTH),&#39;%Y-%m&#39;)</span><br><span class="line"></span><br><span class="line">select * from user where DATE_FORMAT(pudate,&#39;%Y%m&#39;) &#x3D; DATE_FORMAT(CURDATE(),&#39;%Y%m&#39;) ; </span><br><span class="line"></span><br><span class="line">select * from user where WEEKOFYEAR(FROM_UNIXTIME(pudate,&#39;%y-%m-%d&#39;)) &#x3D; WEEKOFYEAR(now()) </span><br><span class="line"></span><br><span class="line">select * from user where MONTH(FROM_UNIXTIME(pudate,&#39;%y-%m-%d&#39;)) &#x3D; MONTH(now()) </span><br><span class="line"></span><br><span class="line">select * from user where YEAR(FROM_UNIXTIME(pudate,&#39;%y-%m-%d&#39;)) &#x3D; YEAR(now()) and MONTH(FROM_UNIXTIME(pudate,&#39;%y-%m-%d&#39;)) &#x3D; MONTH(now()) </span><br><span class="line"></span><br><span class="line">select * from user where pudate between  上月最后一天  and 下月第一天 </span><br></pre></td></tr></table></figure><p><strong>查询当前月份的数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,submittime from enterprise   where date_format(submittime,&#39;%Y-%m&#39;)&#x3D;date_format(now(),&#39;%Y-%m&#39;)</span><br></pre></td></tr></table></figure><p><strong>查询距离当前现在6个月的数据</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,submittime from enterprise where submittime between date_sub(now(),interval 6 month) and now();</span><br></pre></td></tr></table></figure>]]></content>
       
@@ -121,8 +140,8 @@
     
     <entry>
       <title>Slf4j使用 - Spring Boot Logging with Lombok</title>
-      <link href="2021/03/11/Slf4j%E4%BD%BF%E7%94%A8/"/>
-      <url>2021/03/11/Slf4j%E4%BD%BF%E7%94%A8/</url>
+      <link href="/2021/03/11/Slf4j%E4%BD%BF%E7%94%A8/"/>
+      <url>/2021/03/11/Slf4j%E4%BD%BF%E7%94%A8/</url>
       
         <content type="html"><![CDATA[<h3 id="Spring-Boot-Logging-with-Lombok"><a href="#Spring-Boot-Logging-with-Lombok" class="headerlink" title="Spring Boot Logging with Lombok"></a>Spring Boot Logging with Lombok</h3><p>Lombok 可以通过注解消除获取 Logger 的样板式代码</p><h3 id="Log-Log4j2-Slf4J-Lombok-annotations"><a href="#Log-Log4j2-Slf4J-Lombok-annotations" class="headerlink" title="@Log, @Log4j2, @Slf4J - Lombok annotations"></a>@Log, @Log4j2, @Slf4J - Lombok annotations</h3><ul><li><p><code>@CommonsLog</code> – Creates the logger with following statement:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> org.apache.commons.logging.Log log = </span><br><span class="line">    org.apache.commons.logging.LogFactory.getLog(LogExample.class);</span><br></pre></td></tr></table></figure></li><li><p><code>@Log</code> – Creates the logger with following statement:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> org.apache.commons.logging.Log log = </span><br><span class="line">    org.apache.commons.logging.LogFactory.getLog(LogExample.class);</span><br></pre></td></tr></table></figure></li><li><p><code>@Log4j2</code> – Creates the logger with following statement:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> org.apache.logging.log4j.Logger log = </span><br><span class="line">    org.apache.logging.log4j.LogManager.getLogger(LogExample.class);</span><br></pre></td></tr></table></figure></li><li><p><code>@Slf4j</code> – Creates the logger with following statement:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Creates <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> org.slf4j.Logger log = </span><br><span class="line">    org.slf4j.LoggerFactory.getLogger(LogExample.class);</span><br></pre></td></tr></table></figure><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">         </span><br><span class="line">        log.info(<span class="string">&quot;Simple log statement with inputs &#123;&#125;, &#123;&#125; and &#123;&#125;&quot;</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>默认：Spring Boot 使用 logback 作为日志实现</p>]]></content>
       
@@ -142,8 +161,8 @@
     
     <entry>
       <title>2020年末</title>
-      <link href="2020/12/29/2020%E5%B9%B4%E6%9C%AB/"/>
-      <url>2020/12/29/2020%E5%B9%B4%E6%9C%AB/</url>
+      <link href="/2020/12/29/2020%E5%B9%B4%E6%9C%AB/"/>
+      <url>/2020/12/29/2020%E5%B9%B4%E6%9C%AB/</url>
       
         <content type="html"><![CDATA[<h1 id="2020年末"><a href="#2020年末" class="headerlink" title="2020年末"></a>2020年末</h1><p>工作已经 4 年，从安卓转到 Java 感觉技术依旧一般，没有太大进展，太多东西只懂个大概。最近浏览时发现了这个 <a href="https://hexo.io/zh-cn/">hexo</a> 的<a href="https://github.com/probberechts/hexo-theme-cactus">主题</a>格外符合我的审美，希望它能提供我不断前进的动力。</p>]]></content>
       
